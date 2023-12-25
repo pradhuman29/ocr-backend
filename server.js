@@ -17,7 +17,7 @@ db.connect((err) => {
     if (err) {
         console.error(err);
     } else {
-        console.log("Connected to database id_card");
+        console.log("Connected to database");
     }
 });
 app.post("/endpoint", (req, res) => {
