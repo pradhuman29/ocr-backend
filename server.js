@@ -40,7 +40,7 @@ app.post("/endpoint", (req, res) => {
         status = 'failure';
     }
 
-    const insertUserQuery = `INSERT INTO ocrdummy (identification_number, name, last_name, date_of_birth, date_of_issue, date_of_expiry, status) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+    const insertUserQuery = `INSERT INTO ocr (identification_number, name, last_name, date_of_birth, date_of_issue, date_of_expiry, status) VALUES (?, ?, ?, ?, ?, ?, ?)`;
     db.query(
         insertUserQuery,
         [IdentificationNumber, FirstName, LastName, DateOfBirth, DateOfIssue, DateOfExpiry, status],
@@ -59,7 +59,7 @@ app.post("/endpoint", (req, res) => {
 
 
 app.get("/showdetails", (req, res) => {
-    const selectUserQuery = `SELECT * FROM ocrdummy`;
+    const selectUserQuery = `SELECT * FROM ocr`;
 
     db.query(selectUserQuery, (err, result) => {
         if (err) {
